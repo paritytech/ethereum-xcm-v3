@@ -23,4 +23,10 @@ contract MultiLocationEncoderTest is Test {
         bytes memory encodedValue = encoder.encodeMultiLocationSameConsensusAccountId32(0, 1000, 0x0000000000000000000000000000000000000000000000000000000000000000);
         assertEq(testValue, encodedValue);
     }
+
+    function testEncodeMultiLocationAccountId32() public {
+        bytes memory testValue = "\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00";
+        bytes memory encodedValue = encoder.encodeMultiLocationAccountId32(0x0000000000000000000000000000000000000000000000000000000000000000);
+        assertEq(testValue, encodedValue);
+    }
 }

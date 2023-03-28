@@ -40,4 +40,15 @@ contract MultiLocationEncoder {
             accountId32
         );
     }
+
+    function encodeMultiLocationAccountId32(
+        bytes32 accountId32
+    )
+    public pure returns (bytes memory) {
+        XCMEnums.XcmV3Junction junction = XCMEnums.XcmV3Junction.AccountId32;
+        return abi.encodePacked(
+            ScaleCodec.encodeU8(uint8(junction)),
+            accountId32
+        );
+    }
 }
