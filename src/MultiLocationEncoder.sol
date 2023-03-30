@@ -52,7 +52,7 @@ contract MultiLocationEncoder {
     public pure returns (bytes memory) {
         XcmV3Junctions interiorJunctions = XcmV3Junctions.X1;
         XcmV3Junction firstJunction = XcmV3Junction.Parachain;
-        return abi.encodePacked(
+        return bytes.concat(
             ScaleCodec.encodeU8(uint8(parents)),
             ScaleCodec.encodeU8(uint8(interiorJunctions)),
             ScaleCodec.encodeU8(uint8(firstJunction)),
@@ -69,7 +69,7 @@ contract MultiLocationEncoder {
         XcmV3Junctions interiorJunctions = XcmV3Junctions.X2;
         XcmV3Junction firstJunction = XcmV3Junction.Parachain;
         XcmV3Junction secondJunction = XcmV3Junction.AccountId32;
-        return abi.encodePacked(
+        return bytes.concat(
             ScaleCodec.encodeU8(uint8(parents)),
             ScaleCodec.encodeU8(uint8(interiorJunctions)),
             ScaleCodec.encodeU8(uint8(firstJunction)),
@@ -84,7 +84,7 @@ contract MultiLocationEncoder {
     )
     public pure returns (bytes memory) {
         XcmV3Junction junction = XcmV3Junction.AccountId32;
-        return abi.encodePacked(
+        return bytes.concat(
             ScaleCodec.encodeU8(uint8(junction)),
             accountId32
         );
