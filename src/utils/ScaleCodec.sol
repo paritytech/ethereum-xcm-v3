@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
+
 pragma solidity ^0.8.13;
 
 library ScaleCodec {
@@ -108,4 +109,5 @@ library ScaleCodec {
     function encodeU8(uint8 input) internal pure returns (bytes1) {
         return bytes1(input);
     }
+
 }
